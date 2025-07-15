@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Syam's Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional: Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0f2027',
+                            mid: '#203a43',
+                            light: '#2c5364'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome (Optional for icons) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gradient-to-br from-cyber-dark via-cyber-mid to-cyber-light text-white font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="{{ url_for('static', filename='images/ksk_logo.png') }}" class="h-10 w-10 rounded-full" alt="Logo">
+                <span class="text-xl font-bold text-cyan-400">Syam's Portfolio</span>
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#educational-info" class="text-cyan-400 hover:text-cyan-300">Education</a>
+                <a href="#prof-skill" class="text-cyan-400 hover:text-cyan-300">Skills</a>
+                <a href="#certifications" class="text-cyan-400 hover:text-cyan-300">Certifications</a>
+                <a href="#contact-us" class="text-cyan-400 hover:text-cyan-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="text-center py-12">
+        <img src="{{ url_for('static', filename='images/face_pic.jpg') }}" class="mx-auto rounded-full w-32 h-32 object-cover" alt="Profile">
+        <h2 class="mt-4 text-2xl font-semibold">Karri Syam Kumar</h2>
+        <p class="text-cyan-300">Cyber Security Engineer</p>
+        <p class="text-gray-300 max-w-xl mx-auto mt-2">
+            A Cyber Security Engineer is responsible for protecting an organization's computer systems and networks from cyber threats.
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-4 py-6">
+        <div class="bg-white bg-opacity-5 backdrop-blur-md p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-4">About</h3>
+            <p>
+                A passionate Computer Science student from Lovely Professional University, Phagwara, specializing in Cyber Security and Artificial Intelligence. Combining tech skills with a passion for innovation. Always learning, always building.
+            </p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="educational-info" class="container mx-auto px-4 py-6">
+        <div class="bg-white bg-opacity-5 backdrop-blur-md p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-4">Education</h3>
+            <p><strong>B.Tech in Computer Science & Engineering</strong><br>Lovely Professional University, Punjab (2022-2026)</p>
+            <p>CGPA: 7.14/10</p>
+            <ul class="list-disc list-inside mt-2">
+                <li>Contact search system in C using structures with CRUD functionalities.</li>
+                <li>Functional calculator in Python using math libraries and error-handling.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="prof-skill" class="container mx-auto px-4 py-6">
+        <div class="bg-white bg-opacity-5 backdrop-blur-md p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-4">Professional Skills</h3>
+            <p><strong>Programming Languages:</strong> Python, Java, C++</p>
+            <p><strong>Tools/Frameworks:</strong> MySQL, Wireshark, Kali Linux, CSS, Javascript</p>
+            <p><strong>Soft Skills:</strong> Team Player, Problem Solving, Communication</p>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="container mx-auto px-4 py-6">
+        <div class="bg-white bg-opacity-5 backdrop-blur-md p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-4">Certifications</h3>
+            <ul class="space-y-2">
+                <li>
+                    <strong>Cloud Computing</strong>
+                    <a class="text-cyan-400 underline ml-2" href="{{ url_for('static', filename='files/cloud_computing.pdf') }}" target="_blank">View Certificate</a>
+                </li>
+                <li>
+                    <strong>Ethical Hacking Essentials</strong>
+                    <a class="text-cyan-400 underline ml-2" href="{{ url_for('static', filename='files/ethical_hack.pdf') }}" target="_blank">View Certificate</a>
+                </li>
+                <li>
+                    <strong>C and C++ Programming Languages</strong>
+                    <a class="text-cyan-400 underline ml-2" href="{{ url_for('static', filename='files/summer_train.pdf') }}" target="_blank">View Certificate</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-us" class="container mx-auto px-4 py-6">
+        <div class="bg-white bg-opacity-5 backdrop-blur-md p-6 rounded-xl">
+            <h3 class="text-xl font-semibold mb-4">Contact</h3>
+            <form action="/" method="POST" class="space-y-4">
+                <input type="text" name="name" placeholder="Name" required class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600">
+                <input type="text" name="subject" placeholder="Subject" required class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600">
+                <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600">
+                <textarea name="message" placeholder="Your Message" required class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600"></textarea>
+                <div class="flex space-x-4">
+                    <button type="submit" class="bg-cyan-400 text-black font-semibold px-4 py-2 rounded hover:bg-cyan-300">Send</button>
+                    <a href="{{ url_for('static', filename='files/syam_cv.pdf') }}" target="_blank" class="bg-cyan-400 text-black font-semibold px-4 py-2 rounded hover:bg-cyan-300">Download CV</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
